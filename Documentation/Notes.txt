@@ -1,0 +1,17 @@
+HISTORY
+    - changed database connection string scaffolded with Microsoft Identity - Individual Users to local SQL Server instance instead of SQL Express
+    - changed bootstrap.min.css to dark template
+    - override of selected Identity Account pages/code behind (thes are normally in Identity RCL in .NET 6)
+    - modified Login screen appearance
+
+TODO
+    - Review and correct EF OnModelCreating for one-to-many relationships to prevent deleting a MessageCategory or MessageCreator used by an existing message
+    - Implement UI Filter to require HTTPS
+    - Implement HATEAOS url links in API respsonse body (in lieu of Location Header)
+    - Implement Authenticated User (Principle Id) UID in message table to restrict access to messages to the creator or administrator (or other role as required)
+        - use Authorized attribute on UI Controller to selectively hide messages page (must be authenticated, i.e. logged in) to manage messages
+
+DESIGN CONSIDERATIONS
+    - Consider abstraction of Identity to a service (possibly including UI)
+    - Consider OpenId
+    - Consider Concurrency of API requests, perhaps ETag, etc.

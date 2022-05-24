@@ -1,0 +1,75 @@
+﻿@page
+@model SimpleMessaging.UI.Pages.Messages.IndexModel
+
+@{
+    ViewData["Title"] = "Simple Message List";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Simple Messages List</h1>
+
+<p>
+    <a asp-page="Create">Create New Simple Message</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Message[0].Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message[0].Creator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message[0].Body)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message[0].PostDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Message)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Creator.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Body)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostDate)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<section class="container-fluid">
+    <div class="accordion" id="ux-development-notes">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="ui-modifications">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    UI Modifications Planned
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#ux-development-notes" style="">
+                <div class="accordion-body">
+                    <div class="list-group">
+                        <p class="list-group-item">- add filtering for Category</p>
+                        <p class="list-group-item">- add filtering for Creator</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
