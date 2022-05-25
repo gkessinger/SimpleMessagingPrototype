@@ -23,7 +23,11 @@ namespace SimpleMessaging.Message.Repository.SQL.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Message>().HasKey(e => e.Id);
+
             modelBuilder.Entity<MessageCategory>().HasKey(e => e.Id);
+            modelBuilder.Entity<MessageCategory>().Property(e => e.Name).HasMaxLength(50).IsRequired();
+            modelBuilder.Entity<MessageCategory>().HasIndex(x => x.Name).IsUnique();
+
             modelBuilder.Entity<MessageCreator>().HasKey(e => e.Id);
 
             base.OnModelCreating(modelBuilder);

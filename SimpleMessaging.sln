@@ -7,7 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMessaging.Message.API
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{7EF59FAF-C00F-4C39-8A43-AEB50FECB3DD}"
 	ProjectSection(SolutionItems) = preProject
-		Documentation\Design.pdf = Documentation\Design.pdf
 		Documentation\Design.vsdx = Documentation\Design.vsdx
 		Documentation\Notes.txt = Documentation\Notes.txt
 	EndProjectSection
