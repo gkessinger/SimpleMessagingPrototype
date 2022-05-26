@@ -8,6 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Documentation\Design.pdf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Documentation\Design.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.5" />
@@ -25,6 +35,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Documentation\Data\" />
+    <Folder Include="Areas\Documentation\Models\" />
     <Folder Include="Areas\Messages\Data\" />
     <Folder Include="Areas\Messages\Views\" />
     <Folder Include="Models\" />
